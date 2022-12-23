@@ -2,7 +2,7 @@
 FROM rustlang/rust:nightly AS builder
 
 # working directory inside the Container
-WORKDIR /usr/src/tichu
+WORKDIR /usr/src/tichuago
 
 # copy all files into the docker image
 COPY . .

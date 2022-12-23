@@ -1,5 +1,5 @@
 [package]
-name = "tichu-client"
+name = "tichuago-client"
 version = "0.1.0"
 authors = ["Santiago Depascale"] # Based on the work of Austin Theriot
 edition = "2021"
