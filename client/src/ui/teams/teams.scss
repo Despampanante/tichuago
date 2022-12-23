@@ -1,0 +1,88 @@
+@import '../../styles/mixins.scss';
+
+.teams-container {
+  h1 {
+    margin-bottom: 32px;
+  }
+
+  .team-input {
+    width: 95%;
+    max-width: 300px;
+    margin: 16px auto;
+  }
+
+  & > .button {
+    margin: 32px auto;
+  }
+
+  .input-wrapper {
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid var(--gray-75);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .view-team-as-cards-container {
+    margin: 16px auto;
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .view-user-as-card {
+    position: relative;
+    border: 2px solid var(--gray-75);
+    border-radius: 7px;
+    min-width: 64px;
+    min-height: 99.5px;
+    
+    // top margin makes room for display name above card
+    margin: 40px 16px 16px 16px;
+
+    p {
+      position: absolute;
+      top: -24px;
+      width: 100%;
+
+      @include text-ellipsis;
+    }
+
+    &.selected {
+      background-color: var(--secondary-70);
+    }
+  }
+
+  .move-team-button {
+    overflow: visible;
+    padding: 0;
+
+    svg {
+      transition: 0.2s;
+      height: 20px;
+      width: 20px;
+    }
+
+    &:disabled  {
+      svg {
+        stroke: var(--gray-75);
+      }
+    }
+
+    &:not(:disabled) {
+      border: 2px solid var(--primary-40);
+      svg {
+        stroke: var(--primary-40);
+      }
+    }
+
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
+}

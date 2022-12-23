@@ -1,0 +1,44 @@
+@import '../../styles/mixins.scss';
+
+@mixin sub-heading {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.lobby-container {
+  .game-code-title {
+    @include sub-heading;
+    margin-top: 32px;
+  }
+
+  .game-code-string {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 53px;
+    text-align: center;
+  }
+
+  .joined {
+    @include sub-heading;
+    margin-top: 32px;
+  }
+  
+  .participants-list {
+    width: 100%;
+    margin: 16px auto 48px;
+    text-align: center;
+    list-style-type: none;
+
+    li {
+      width: 100%;
+      text-align: center;
+      margin-top: 8px;
+      @include text-ellipsis;
+    }
+  }
+
+  .button {
+    margin: 20px auto;
+  }
+}

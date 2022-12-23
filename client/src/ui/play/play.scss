@@ -1,0 +1,71 @@
+@import '../../styles/mixins.scss';
+
+.play-container {
+  .scores {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+
+    .score {
+      display: flex;
+
+      .team-name {
+        max-width: 100%;
+        margin-right: 1rem;
+        @include text-ellipsis;
+      }
+
+      .team-score {
+        min-width: fit-content;
+      }
+    }
+  }
+
+  .turns {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 0.25rem;
+    margin: 0.5rem auto;
+
+    .display-name {
+      display: block;
+      width: 100%;
+      max-width: 25%;
+      @include text-ellipsis;
+      padding: 0.25rem;
+      border-radius: 5px;
+      text-align: center;
+
+      &.selected {
+        background-color: var(--secondary-70);
+      }
+    }
+  }
+
+  .cards-on-table {
+    width: 100%;
+    overflow-x: scroll;
+    margin: 64px auto;
+    position: relative;
+    --width: 158px;
+    width: var(--width);
+    height: calc(var(--width) / var(--card-aspect-ratio));
+    border-radius: 7px;
+
+    .regular-value, .special {
+      display: block;
+      font-size: 16ox;
+      text-align: right;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+    .regular-suit {
+      display: block;
+      text-align: center;
+      top: 36px;
+      right: 16px;
+    }  
+  }
+}

@@ -1,0 +1,108 @@
+.pre-play-hand {
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: start;
+  justify-content: flex-start;
+  margin: 32px auto;
+
+  li {
+    width: var(--card-width);
+    min-width: var(--card-width);
+    height: var(--card-height);
+    min-height: var(--card-height);
+    // overlap the cards
+    margin-left: calc(var(--card-width) * (-3 / 4));
+
+    button {
+      width: 100%;
+      height: 100%;
+      box-shadow: none;
+      outline: none;
+      border: none;
+      text-align: right;
+      position: relative;
+      cursor: pointer;
+      background-color: white;
+      border-radius: 24px;
+      transition: 0.2s;
+      border: 2px solid var(--gray-75);
+      
+      &:hover:not(:disabled) {
+        border: 2px solid var(--gray-50);
+      }
+      &:focus, &:active:not(:disabled) {
+        border: 2px solid var(--primary-50);
+      }
+      &.selected {
+        background-color: var(--secondary-70);
+      }
+      &:disabled {
+        background-color: var(--gray-100);
+        cursor: not-allowed;
+      }
+
+
+      // styling for card icons (placeholder for now)
+      .regular-value, .special {
+        position: absolute;
+        display: block;
+        top: 16px;
+        right: 16px;
+        font-size: 32px;
+      }
+      .regular-suit {
+        position: absolute;
+        display: block;
+        top: 56px;
+        right: 16px;
+      }      
+    }
+
+    // cards should overlap one another:
+    &:nth-of-type(1) {
+      z-index: 14;
+    }
+    &:nth-of-type(2) {
+      z-index: 13;
+    }
+    &:nth-of-type(3) {
+      z-index: 12;
+    }
+    &:nth-of-type(4) {
+      z-index: 11;
+    }
+    &:nth-of-type(5) {
+      z-index: 10;
+    }
+    &:nth-of-type(6) {
+      z-index: 9;
+    }
+    &:nth-of-type(7) {
+      z-index: 8;
+    }
+    &:nth-of-type(8) {
+      z-index: 7;
+    }
+    &:nth-of-type(9) {
+      z-index: 6;
+    }
+    &:nth-of-type(10) {
+      z-index: 5;
+    }
+    &:nth-of-type(11) {
+      z-index: 4;
+    }
+    &:nth-of-type(12) {
+      z-index: 3;
+    }
+    &:nth-of-type(13) {
+      z-index: 2;
+    }
+    &:nth-of-type(14) {
+      z-index: 1;
+    }
+  }
+}
