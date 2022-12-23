@@ -60,7 +60,7 @@ pub fn connect_to_ws(
     ws_mut_ref: Rc<RefCell<WSState>>,
 ) {
     let ws_is_none = (*ws_mut_ref).borrow().ws.is_none();
-    let my_local_ip = "192.168.1.177";
+    let my_local_ip = "192.168.1.174";
     // println!("Este es mi IP: {:?}", my_local_ip);
     if ws_is_none {
         info!("Opening websocket...");
