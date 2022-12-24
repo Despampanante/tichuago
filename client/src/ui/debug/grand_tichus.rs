@@ -1,5 +1,5 @@
 use crate::global::state::AppContext;
-use common::{PublicGameStage, TichuCallStatus};
+use tichuago_common::{PublicGameStage, TichuCallStatus};
 use yew::prelude::*;
 
 #[function_component(AllGrandTichus)]

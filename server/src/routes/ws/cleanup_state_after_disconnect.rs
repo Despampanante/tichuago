@@ -1,6 +1,6 @@
 use super::send_ws_message;
 use crate::{Connections, GameCodes, Games};
-use common::{PrivateGameStage, STCMsg};
+use tichuago_common::{PrivateGameStage, STCMsg};
 
 const FUNCTION_NAME: &str = "cleanup_state_after_disconnect";
 

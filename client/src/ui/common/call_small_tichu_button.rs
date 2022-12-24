@@ -1,6 +1,6 @@
 use crate::global::{state::AppContext, ws::CTSMsgInternal};
 use crate::ui::common::button::Button;
-use common::TichuCallStatus;
+use tichuago_common::TichuCallStatus;
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]

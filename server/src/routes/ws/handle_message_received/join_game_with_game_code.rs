@@ -1,7 +1,7 @@
 use crate::{
     errors::USER_ID_NOT_IN_MAP, routes::ws::send_ws_message, Connections, GameCodes, Games,
 };
-use common::{validate_display_name, validate_game_code, CTSMsg, PrivateGameStage, STCMsg};
+use tichuago_common::{validate_display_name, validate_game_code, CTSMsg, PrivateGameStage, STCMsg};
 
 const FUNCTION_NAME: &str = "join_game_with_game_code";
 

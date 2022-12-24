@@ -1,4 +1,4 @@
-use common::{PublicGameStage, PublicGameState, UserIdWithTichuCallStatus};
+use tichuago_common::{PublicGameStage, PublicGameState, UserIdWithTichuCallStatus};
 
 pub fn get_small_tichus<'a>(
     public_game_state: &'a PublicGameState,

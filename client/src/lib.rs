@@ -1,5 +1,5 @@
 #![recursion_limit = "1024"]
-extern crate common;
+extern crate tichuago_common;
 extern crate console_error_panic_hook;
 mod global;
 mod ui;

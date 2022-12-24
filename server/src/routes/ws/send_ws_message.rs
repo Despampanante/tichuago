@@ -1,5 +1,5 @@
 use crate::{Connections, GameCodes, Games};
-use common::{PrivateGameState, STCMsg};
+use tichuago_common::{PrivateGameState, STCMsg};
 use warp::ws::Message;
 
 /// Ensures that each user receives a version of the state that only THEY are allowed to see.

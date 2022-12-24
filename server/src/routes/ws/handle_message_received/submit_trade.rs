@@ -1,5 +1,5 @@
 use crate::{routes::ws::send_ws_message, Connections, GameCodes, Games};
-use common::{PrivateGameStage, STCMsg, SubmitTrade};
+use tichuago_common::{PrivateGameStage, STCMsg, SubmitTrade};
 
 const FUNCTION_NAME: &str = "submit_trade";
 

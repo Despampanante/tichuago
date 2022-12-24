@@ -1,5 +1,5 @@
 use crate::global::state::AppContext;
-use common::PublicGameStage;
+use tichuago_common::PublicGameStage;
 use yew::prelude::*;
 
 #[function_component(CardsOnTable)]

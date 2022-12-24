@@ -1,5 +1,5 @@
 [package]
-name = "tichuago-common"
+name = "tichuago_common"
 version = "0.1.0"
 edition = "2021"
 
@@ -16,5 +16,5 @@ js-sys = {version = "0.3.54", optional = true }
 itertools = "0.10.3"
 
 [features]
-client = ["js-sys"]
-server = []
+tichuago_client = ["js-sys"]
+tichuago_server = []

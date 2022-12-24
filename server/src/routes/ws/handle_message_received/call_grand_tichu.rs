@@ -1,5 +1,5 @@
 use crate::{routes::ws::send_ws_message, Connections, GameCodes, Games};
-use common::{CallGrandTichuRequest, PrivateGameStage, STCMsg, TichuCallStatus};
+use tichuago_common::{CallGrandTichuRequest, PrivateGameStage, STCMsg, TichuCallStatus};
 
 const FUNCTION_NAME: &str = "call_grand_tichu";
 

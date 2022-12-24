@@ -5,8 +5,8 @@ use crate::global::{
 use crate::ui::common::button::Button;
 use crate::ui::common::input::Input;
 use crate::ui::common::layout::Layout;
-use common::{
-    clean_up_display_name, validate_display_name, DISPLAY_NAME_MAX_LEN, GAME_CODE_MAX_LEN,
+use tichuago_common::{
+    clean_up_display_name, clean_up_bot_option, validate_display_name, DISPLAY_NAME_MAX_LEN, GAME_CODE_MAX_LEN, BOT_OPTION_MAX_LEN
 };
 use wasm_bindgen::JsCast;
 use web_sys::{EventTarget, HtmlInputElement};
@@ -75,6 +75,17 @@ pub fn join() -> Html {
         })
     };
 
+    // toDo: Implement bot option
+    let handle_join_room_bot_option_input = {
+        let reducer_handle = app_context.app_reducer_handle.clone();
+        Callback::from(move |e: InputEvent| {
+            let target: Option<EventTarget> = e.target();
+            let input = target.and_then(|t| t.dyn_into::<HtmlInputElement>().ok());
+            let msg = input.map(|input| AppReducerAction::SetJoinRoomGameCodeInput(input.value()));
+            reducer_handle.dispatch(msg.unwrap());
+        })
+    };
+
     let handle_create_game_form_submit = {
         let send_ws_message = app_context.send_ws_message.clone();
         Callback::from(move |e: FocusEvent| {
@@ -87,7 +98,7 @@ pub fn join() -> Html {
 
     html! {
         <Layout classes={vec!["join-container".into()]}>
-            <h1>{"Tichu"}</h1>
+            <h1 style="color:Tomato;">{"Tichuago"}</h1>
             <form onsubmit={handle_join_room_form_submit}>
                 <Input
                     label="Display Name"
@@ -106,6 +117,14 @@ pub fn join() -> Html {
                     oninput={handle_join_room_room_code_input}
                     value={app_state.join_room_game_code_input.clone()}
                     maxlength={Some(GAME_CODE_MAX_LEN)}
+                />
+                <Input
+                    label="Bot?"
+                    id="join-room-bot-option-input"
+                    input_type="text"
+                    oninput={handle_join_room_bot_option_input}
+                    value={app_state.join_room_bot_option_input.clone()}
+                    maxlength={Some(BOT_OPTION_MAX_LEN)}
                 />
                 <Button
                     button_type="submit"

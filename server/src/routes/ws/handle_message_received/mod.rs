@@ -32,7 +32,7 @@ use test::test;
 
 use super::send_ws_message;
 use crate::{Connections, GameCodes, Games};
-use common::CTSMsg;
+use tichuago_common::CTSMsg;
 use warp::ws::Message;
 
 pub async fn handle_message_received(

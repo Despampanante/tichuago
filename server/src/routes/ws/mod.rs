@@ -3,7 +3,7 @@ mod handle_message_received;
 pub mod send_ws_message;
 use crate::{ConnectionData, Connections, GameCodes, Games};
 pub use cleanup_state_after_disconnect::cleanup_state_after_disconnect;
-use common::{STCMsg, NO_USER_ID};
+use tichuago_common::{STCMsg, NO_USER_ID};
 use futures::{SinkExt, StreamExt};
 pub use handle_message_received::handle_message_received;
 use std::sync::Arc;

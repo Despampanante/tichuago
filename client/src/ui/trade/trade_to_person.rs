@@ -1,7 +1,7 @@
 use crate::global::state::{AppContext, AppReducerAction};
 use crate::ui::common::button::Button;
 use crate::ui::icons::add::Add;
-use common::OtherPlayerOption;
+use tichuago_common::OtherPlayerOption;
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]

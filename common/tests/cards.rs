@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod test_single_card {
-    use common::{Card, CardSuit, CardValue, Single};
+    use tichuago_common::{Card, CardSuit, CardValue, Single};
 
     #[test]
     fn it_should_compare_std_cards_of_same_suit_correctly() {
@@ -972,7 +972,7 @@ mod test_single_card {
 
 #[cfg(test)]
 mod test_double {
-    use common::{Card, CardSuit, CardValue, Pair};
+    use tichuago_common::{Card, CardSuit, CardValue, Pair};
 
     #[test]
     fn it_should_compare_pairs_correctly() {
@@ -1079,7 +1079,7 @@ mod test_double {
 
 #[cfg(test)]
 mod test_sequence_of_pairs {
-    use common::{CardValue, SequenceOfPairs};
+    use tichuago_common::{CardValue, SequenceOfPairs};
 
     #[test]
     fn it_should_compare_sequence_of_pairs_correctly() {
@@ -1134,7 +1134,7 @@ mod test_sequence_of_pairs {
 
 #[cfg(test)]
 mod test_trio {
-    use common::{CardValue, Trio};
+    use tichuago_common::{CardValue, Trio};
 
     #[test]
     fn it_should_compare_trios_correctly() {
@@ -1170,7 +1170,7 @@ mod test_trio {
 
 #[cfg(test)]
 mod test_bomb_of_4 {
-    use common::{BombOf4, CardValue};
+    use tichuago_common::{BombOf4, CardValue};
 
     #[test]
     fn it_should_compare_sequence_bombs_correctly() {
@@ -1206,7 +1206,7 @@ mod test_bomb_of_4 {
 
 #[cfg(test)]
 mod test_sequence_bomb {
-    use common::{CardSuit, CardValue, SequenceBomb};
+    use tichuago_common::{CardSuit, CardValue, SequenceBomb};
 
     #[test]
     fn it_should_compare_sequence_bombs_correctly() {
@@ -1248,7 +1248,7 @@ mod test_sequence_bomb {
 
 #[cfg(test)]
 mod test_full_house {
-    use common::{CardValue, FullHouse};
+    use tichuago_common::{CardValue, FullHouse};
 
     #[test]
     fn it_should_compare_full_houses_correctly() {
@@ -1284,7 +1284,7 @@ mod test_full_house {
 
 #[cfg(test)]
 mod test_card_value {
-    use common::CardValue;
+    use tichuago_common::CardValue;
 
     #[test]
     fn it_should_compare_values_correctly() {
@@ -1310,7 +1310,7 @@ mod test_card_value {
 
 #[cfg(test)]
 mod test_deck {
-    use common::{Card, CardSuit, CardValue, Deck};
+    use tichuago_common::{Card, CardSuit, CardValue, Deck};
 
     #[test]
     fn new_should_produce_a_vec_of_56_cards() {

@@ -1,4 +1,4 @@
-use common::{Card, ValidCardCombo};
+use tichuago_common::{Card, ValidCardCombo};
 
 /// Helper to get prettier logging on failed tests
 fn fmt_panic(cards: Vec<Card>, combo: Option<ValidCardCombo>) -> String {
@@ -11,7 +11,7 @@ fn fmt_panic(cards: Vec<Card>, combo: Option<ValidCardCombo>) -> String {
 #[cfg(test)]
 mod test_get_card_combination {
     use crate::fmt_panic;
-    use common::{
+    use tichuago_common::{
         get_card_combination, BombOf4, Card, CardSuit, CardValue, FullHouse, Pair, Sequence,
         SequenceBomb, SequenceOfPairs, Single, Trio, ValidCardCombo,
     };

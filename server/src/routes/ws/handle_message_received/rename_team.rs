@@ -1,4 +1,4 @@
-use common::{PrivateGameStage, STCMsg, TeamOption};
+use tichuago_common::{PrivateGameStage, STCMsg, TeamOption};
 
 use crate::{
     errors::{GAME_ID_NOT_IN_MAP, USER_ID_NOT_IN_MAP},

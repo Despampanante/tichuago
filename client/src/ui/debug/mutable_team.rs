@@ -3,7 +3,7 @@ use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]
 pub struct MutableTeamProps {
-    pub team: common::MutableTeam,
+    pub team: tichuago_common::MutableTeam,
 }
 
 #[function_component(MutableTeam)]

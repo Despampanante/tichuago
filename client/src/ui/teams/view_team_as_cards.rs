@@ -1,5 +1,5 @@
 use super::view_user_as_card::ViewUserAsCard;
-use common::MutableTeam;
+use tichuago_common::MutableTeam;
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]

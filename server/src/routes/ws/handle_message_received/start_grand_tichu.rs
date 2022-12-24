@@ -3,7 +3,7 @@ use crate::{
     routes::ws::send_ws_message,
     Connections, GameCodes, Games,
 };
-use common::{PrivateGameStage, STCMsg};
+use tichuago_common::{PrivateGameStage, STCMsg};
 
 const FUNCTION_NAME: &str = "start_grand_tichu";
 

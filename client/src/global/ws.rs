@@ -15,7 +15,7 @@ use crate::global::{
     state::{AppReducerAction, AppState},
 };
 use anyhow::Error;
-use common::{
+use tichuago_common::{
     sort_cards_for_hand, validate_team_name, CTSMsg, CallGrandTichuRequest, CardTrade, CardValue,
     OtherPlayerOption, PublicGameStage, STCMsg, TeamOption,
 };
@@ -60,8 +60,8 @@ pub fn connect_to_ws(
     ws_mut_ref: Rc<RefCell<WSState>>,
 ) {
     let ws_is_none = (*ws_mut_ref).borrow().ws.is_none();
+    // toDo: Figure out best way to go about this
     let my_local_ip = "192.168.1.177";
-    // println!("Este es mi IP: {:?}", my_local_ip);
     if ws_is_none {
         info!("Opening websocket...");
         let url = format!(
@@ -212,7 +212,7 @@ pub fn begin_ping(
     ws_state.ping_interval = Some(interval);
 }
 
-/// Internal Tichu-client message for alerting that it's time to send a websocket message
+/// Internal Tichuago_client message for alerting that it's time to send a websocket message
 ///
 /// This type reflects the common::CTSMsg, except with all data values tripped,
 /// since the data values are formulated in the send_ws_message function
@@ -743,6 +743,5 @@ fn handle_ws_message_received(
             STCMsg::UserPassed(_) => {}
         },
     }
-
     should_rerender
 }

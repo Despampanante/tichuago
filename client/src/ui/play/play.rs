@@ -10,7 +10,7 @@ use super::wished_for_card::WishedForCard;
 use crate::global::{state::AppContext, ws::CTSMsgInternal};
 use crate::ui::common::call_small_tichu_button::CallSmallTichuButton;
 use crate::ui::common::layout::Layout;
-use common::{get_card_combination, DRAGON, MAH_JONG};
+use tichuago_common::{get_card_combination, DRAGON, MAH_JONG};
 use yew::prelude::*;
 
 #[function_component(Play)]

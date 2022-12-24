@@ -5,7 +5,7 @@ use crate::ui::common::layout::Layout;
 use crate::ui::common::pre_play_hand::PrePlayHand;
 use crate::ui::icons::check::Check;
 use crate::ui::icons::x::X;
-use common::{CallGrandTichuRequest, TichuCallStatus};
+use tichuago_common::{CallGrandTichuRequest, TichuCallStatus};
 use yew::prelude::*;
 
 #[function_component(GrandTichu)]

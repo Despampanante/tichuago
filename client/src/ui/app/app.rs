@@ -8,7 +8,7 @@ use crate::ui::lobby::lobby::Lobby;
 use crate::ui::play::play::Play;
 use crate::ui::teams::teams::Teams;
 use crate::ui::trade::trade::Trade;
-use common::PublicGameStage;
+use tichuago_common::PublicGameStage;
 
 use yew::{function_component, html, prelude::*};
 

@@ -1,7 +1,7 @@
 pub static INDEX_HTML: &str = r#"<!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>Tichu</title>
+      <title>Tichuago</title>
   </head>
   <body>
       <h1>Example index file</h1>

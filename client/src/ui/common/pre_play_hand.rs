@@ -1,5 +1,5 @@
 use crate::global::state::{AppContext, AppReducerAction};
-use common::{PublicGameStage, PublicGameState};
+use tichuago_common::{PublicGameStage, PublicGameState};
 use yew::prelude::*;
 
 #[function_component(PrePlayHand)]

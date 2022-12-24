@@ -1,6 +1,6 @@
 use super::send_ws_message;
 use crate::{Connections, GameCodes, Games};
-use common::{validate_display_name, CTSMsg, PrivateGameState, STCMsg};
+use tichuago_common::{validate_display_name, CTSMsg, PrivateGameState, STCMsg};
 
 const FUNCTION_NAME: &str = "create_game";
 

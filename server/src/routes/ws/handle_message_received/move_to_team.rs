@@ -3,7 +3,7 @@ use crate::{
     routes::ws::send_ws_message,
     Connections, GameCodes, Games,
 };
-use common::{PrivateGameStage, STCMsg, TeamOption};
+use tichuago_common::{PrivateGameStage, STCMsg, TeamOption};
 
 const FUNCTION_NAME: &str = "move_to_team";
 

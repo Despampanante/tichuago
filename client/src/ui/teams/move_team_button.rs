@@ -1,7 +1,7 @@
 use crate::global::{state::AppContext, ws::CTSMsgInternal};
 use crate::ui::common::button::{Button, ButtonVariant};
 use crate::ui::icons::up_arrow::UpArrow;
-use common::TeamOption;
+use tichuago_common::TeamOption;
 use yew::prelude::*;
 
 #[derive(Properties, PartialEq)]

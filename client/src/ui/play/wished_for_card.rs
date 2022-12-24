@@ -1,5 +1,5 @@
 use crate::global::state::AppContext;
-use common::{CardValue, PublicGameStage};
+use tichuago_common::{CardValue, PublicGameStage};
 use yew::prelude::*;
 
 #[function_component(WishedForCard)]

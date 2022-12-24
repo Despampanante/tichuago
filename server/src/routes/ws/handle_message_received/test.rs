@@ -1,4 +1,4 @@
-use common::STCMsg;
+use tichuago_common::STCMsg;
 
 use crate::{routes::ws::send_ws_message, Connections};
 

@@ -1,9 +1,9 @@
 // #![deny(warnings)]
-extern crate common;
+extern crate tichuago_common;
 mod errors;
 mod routes;
 
-use common::{PrivateGameState, STCMsg, NO_USER_ID};
+use tichuago_common::{PrivateGameState, STCMsg, NO_USER_ID};
 use futures::join;
 use routes::{
     index,

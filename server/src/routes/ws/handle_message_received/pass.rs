@@ -1,5 +1,5 @@
 use crate::{routes::ws::send_ws_message, Connections, GameCodes, Games};
-use common::STCMsg;
+use tichuago_common::STCMsg;
 
 const FUNCTION_NAME: &str = "pass";
 

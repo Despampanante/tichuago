@@ -4,7 +4,7 @@ use super::view_team_as_cards::ViewTeamAsCards;
 use crate::global::{state::AppContext, ws::CTSMsgInternal};
 use crate::ui::common::button::Button;
 use crate::ui::common::layout::Layout;
-use common::{PublicGameStage, PublicGameState, TeamOption};
+use tichuago_common::{PublicGameStage, PublicGameState, TeamOption};
 use yew::prelude::*;
 
 #[function_component(Teams)]

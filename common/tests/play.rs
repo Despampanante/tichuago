@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod test_get_next_user_turn_id {
-    use common::{ImmutableTeam, PassWithUserId, PrivatePlay, UserIdWithTichuCallStatus};
+    use tichuago_common::{ImmutableTeam, PassWithUserId, PrivatePlay, UserIdWithTichuCallStatus};
 
     #[test]
     fn it_should_return_the_correct_next_user_id() {
@@ -12,19 +12,19 @@ mod test_get_next_user_turn_id {
         let tichu_call_statuses = [
             UserIdWithTichuCallStatus {
                 user_id: user_1.clone(),
-                tichu_call_status: common::TichuCallStatus::Declined,
+                tichu_call_status: tichuago_common::TichuCallStatus::Declined,
             },
             UserIdWithTichuCallStatus {
                 user_id: user_2.clone(),
-                tichu_call_status: common::TichuCallStatus::Declined,
+                tichu_call_status: tichuago_common::TichuCallStatus::Declined,
             },
             UserIdWithTichuCallStatus {
                 user_id: user_3.clone(),
-                tichu_call_status: common::TichuCallStatus::Declined,
+                tichu_call_status: tichuago_common::TichuCallStatus::Declined,
             },
             UserIdWithTichuCallStatus {
                 user_id: user_4.clone(),
-                tichu_call_status: common::TichuCallStatus::Declined,
+                tichu_call_status: tichuago_common::TichuCallStatus::Declined,
             },
         ];
 

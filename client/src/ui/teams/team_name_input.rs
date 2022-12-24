@@ -3,7 +3,7 @@ use crate::global::{
     ws::CTSMsgInternal,
 };
 use crate::ui::common::input::Input;
-use common::TeamOption;
+use tichuago_common::TeamOption;
 use wasm_bindgen::JsCast;
 use web_sys::HtmlInputElement;
 use yew::prelude::*;

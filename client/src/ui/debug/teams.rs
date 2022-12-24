@@ -1,7 +1,7 @@
 use super::immutable_team::ImmutableTeam;
 use super::mutable_team::MutableTeam;
 use crate::global::state::AppContext;
-use common::PublicGameStage;
+use tichuago_common::PublicGameStage;
 use yew::prelude::*;
 
 #[function_component(Teams)]

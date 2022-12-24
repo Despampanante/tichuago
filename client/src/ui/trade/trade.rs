@@ -6,7 +6,7 @@ use crate::ui::common::layout::Layout;
 use crate::ui::common::pre_play_hand::PrePlayHand;
 use crate::ui::icons::check::Check;
 use crate::ui::icons::up_arrow::UpArrow;
-use common::OtherPlayerOption;
+use tichuago_common::OtherPlayerOption;
 use yew::prelude::*;
 
 #[function_component(Trade)]
