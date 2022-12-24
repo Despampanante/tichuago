@@ -25,7 +25,12 @@ pub fn lobby() -> Html {
                     <p class="game-code-string">
                         {&game_state.game_code}
                     </p>
-
+                    <p class="bot-player">
+                        {"Bot Player: "}
+                    </p>
+                    <p class="bot-player-option">
+                        {&game_state.current_user.is_bot}
+                    </p>
                     <Button
                         variant={ButtonVariant::Circle}
                         disabled=true

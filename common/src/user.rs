@@ -21,6 +21,7 @@ pub struct PublicUser {
     pub display_name: String,
     pub tricks: Vec<ValidCardCombo>,
     pub has_played_first_card: bool,
+    pub is_bot: bool,
 }
 
 impl From<PrivateUser> for PublicUser {
@@ -31,6 +32,7 @@ impl From<PrivateUser> for PublicUser {
             role: private_user.role.clone(),
             tricks: private_user.tricks.clone(),
             user_id: private_user.user_id,
+            is_bot: private_user.is_bot,
         }
     }
 }
@@ -43,6 +45,7 @@ impl From<&PrivateUser> for PublicUser {
             role: private_user.role.clone(),
             tricks: private_user.tricks.clone(),
             user_id: private_user.user_id.clone(),
+            is_bot: private_user.is_bot.clone(),
         }
     }
 }
@@ -53,6 +56,7 @@ impl From<&PrivateUser> for PublicUser {
 pub struct PrivateUser {
     pub user_id: String,
     pub role: UserRole,
+    pub is_bot: bool,
     pub display_name: String,
     pub tricks: Vec<ValidCardCombo>,
     pub has_played_first_card: bool,

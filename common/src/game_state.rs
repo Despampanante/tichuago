@@ -42,6 +42,7 @@ impl PrivateGameState {
             tricks: vec![],
             hand: vec![],
             has_played_first_card: false,
+            is_bot: false,
         };
         PrivateGameState {
             game_id: Uuid::new_v4().to_string(),
@@ -53,7 +54,7 @@ impl PrivateGameState {
     }
 
     /// Adds a user to the game.
-    pub fn add_user(&self, user_id: String, display_name: String) -> Result<Self, String> {
+    pub fn add_user(&self, user_id: String, display_name: String, bot_player: bool) -> Result<Self, String> {
         let current_participants = self.participants.len();
         let game_has_max_participants = current_participants == 4;
         let is_lobby = matches!(self.stage, PrivateGameStage::Lobby);
@@ -70,6 +71,7 @@ impl PrivateGameState {
             tricks: vec![],
             hand: vec![],
             has_played_first_card: false,
+            is_bot: bot_player,
         };
         let mut new_participants = self.participants.clone();
         new_participants.push(participant);

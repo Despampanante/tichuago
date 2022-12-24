@@ -75,6 +75,7 @@ pub enum CTSMsg {
         user_id: String,
         display_name: String,
         game_code: String,
+        bot_player: bool,
     },
 
     /// Create game as the owner

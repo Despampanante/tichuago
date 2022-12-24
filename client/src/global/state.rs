@@ -1,7 +1,7 @@
 //! Global state for the Tichu app
 
 use tichuago_common::{
-    clean_up_display_name, clean_up_game_code, clean_up_bot_option, get_card_combination,
+    clean_up_display_name, clean_up_game_code, get_card_combination,
     get_user_can_play_wished_for_card, next_combo_beats_prev, sort_cards_for_hand,
     validate_display_name, validate_game_code, Card, CardValue, Deck, OtherPlayerOption,
     PublicGameStage, PublicGameState, TeamCategories, TichuCallStatus, ValidCardCombo, DRAGON,
@@ -45,7 +45,7 @@ pub enum AppReducerAction {
     SetDisplayNameInput(String),
     SetDisplayNameInputError(Option<String>),
     SetJoinRoomGameCodeInput(String),
-    SetBotOptionInput(String),
+    SetBotOptionInput(bool),
     SetTeamANameInput(String),
     SetTeamBNameInput(String),
     SetSelectedPrePlayCard(usize),
@@ -68,7 +68,7 @@ pub struct AppState {
     pub game_state: Option<PublicGameState>,
 
     pub join_room_game_code_input: String,
-    pub join_room_bot_option_input: String,
+    pub join_room_bot_option_input: bool,
     pub display_name_input: String,
     pub display_name_input_error: Option<String>,
     pub team_a_name_input: String,
@@ -162,9 +162,8 @@ impl Reducible for AppState {
                     let s = clean_up_game_code(&s);
                     next_state.join_room_game_code_input = s;
                 }
-                AppReducerAction::SetBotOptionInput(s) => {
-                    let s = clean_up_bot_option(&s);
-                    next_state.join_room_bot_option_input = s;
+                AppReducerAction::SetBotOptionInput(v) => {
+                    next_state.join_room_bot_option_input = v;
                 }
                 AppReducerAction::SetDisplayNameInput(s) => {
                     next_state.display_name_input = s;
@@ -322,7 +321,7 @@ impl Default for AppState {
             display_name_input_error: None,
             game_state: None,
             join_room_game_code_input: "".into(),
-            join_room_bot_option_input: "".into(),
+            join_room_bot_option_input: false,
             team_a_name_input: "".into(),
             team_b_name_input: "".into(),
             selected_pre_play_card: None,
@@ -349,6 +348,11 @@ impl AppState {
         } else {
             None
         };
+    }
+
+    /// bot stuff
+    pub fn is_bot_player(&self) -> bool {
+        self.join_room_bot_option_input == true
     }
 
     /// only for use in the Trade stage

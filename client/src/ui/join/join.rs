@@ -6,7 +6,7 @@ use crate::ui::common::button::Button;
 use crate::ui::common::input::Input;
 use crate::ui::common::layout::Layout;
 use tichuago_common::{
-    clean_up_display_name, clean_up_bot_option, validate_display_name, DISPLAY_NAME_MAX_LEN, GAME_CODE_MAX_LEN, BOT_OPTION_MAX_LEN
+    clean_up_display_name, validate_display_name, DISPLAY_NAME_MAX_LEN, GAME_CODE_MAX_LEN
 };
 use wasm_bindgen::JsCast;
 use web_sys::{EventTarget, HtmlInputElement};
@@ -81,7 +81,7 @@ pub fn join() -> Html {
         Callback::from(move |e: InputEvent| {
             let target: Option<EventTarget> = e.target();
             let input = target.and_then(|t| t.dyn_into::<HtmlInputElement>().ok());
-            let msg = input.map(|input| AppReducerAction::SetBotOptionInput(input.value()));
+            let msg = input.map(|input| AppReducerAction::SetBotOptionInput(input.value() == "true"));
             reducer_handle.dispatch(msg.unwrap());
         })
     };
@@ -119,12 +119,11 @@ pub fn join() -> Html {
                     maxlength={Some(GAME_CODE_MAX_LEN)}
                 />
                 <Input
-                    label="Bot?"
+                    label={if app_state.join_room_bot_option_input {"BOT"} else {"HUMAN"}}
                     id="join-room-bot-option-input"
-                    input_type="text"
+                    input_type="checkbox"
                     oninput={handle_join_room_bot_option_input}
-                    value={app_state.join_room_bot_option_input.clone()}
-                    maxlength={Some(BOT_OPTION_MAX_LEN)}
+                    value={if app_state.join_room_bot_option_input {"false"} else {"true"}}
                 />
                 <Button
                     button_type="submit"

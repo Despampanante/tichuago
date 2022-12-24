@@ -367,6 +367,7 @@ fn send_ws_message(
                     .to_uppercase(),
                 display_name: (*app_reducer_handle).display_name_input.clone(),
                 user_id: (*app_reducer_handle).user_id.clone(),
+                bot_player: (*app_reducer_handle).is_bot_player().clone(),
             };
 
             _send_ws_message(ws_mut_ref.clone(), msg);

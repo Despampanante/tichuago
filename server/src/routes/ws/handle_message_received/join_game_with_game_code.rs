@@ -15,6 +15,7 @@ pub async fn join_game_with_game_code(
         user_id,
         display_name,
         game_code,
+        bot_player
     } = join_game_with_game_code_data
     {
         // bad inputs from client, ignore request
@@ -72,7 +73,8 @@ pub async fn join_game_with_game_code(
             return;
         }
 
-        let new_game_state = match game_state_clone.add_user(user_id.clone(), display_name) {
+        let new_game_state = match game_state_clone.add_user(user_id.clone(), display_name, bot_player)
+        {
             Ok(new_game_state) => new_game_state,
             Err(err) => return eprintln!("{}", err),
         };

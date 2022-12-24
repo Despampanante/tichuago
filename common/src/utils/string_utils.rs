@@ -42,13 +42,8 @@ pub fn get_new_game_code(game_codes: &HashMap<String, String>) -> String {
 pub fn clean_up_display_name(display_name: &str) -> String {
     display_name.trim().to_string()
 }
-
 pub fn clean_up_game_code(game_code: &str) -> String {
     game_code.trim().to_uppercase()
-}
-
-pub fn clean_up_bot_option(bot_option: &str) -> String {
-    bot_option.trim().to_uppercase()
 }
 
 pub fn clean_up_team_name(team_name: &str) -> String {
@@ -100,23 +95,19 @@ pub fn validate_game_code(game_code: &str) -> Option<String> {
     }
 }
 
-pub const BOT_OPTION_MAX_LEN: usize = 1;
-pub fn validate_bot_option(bot_option: &str) -> Option<String> {
-    let mut error = String::from("");
-
-    if clean_up_bot_option(bot_option).is_empty() {
-        error = String::from("REVIEW Game code is required");
-    } else if bot_option.to_uppercase() != bot_option {
-        error = String::from("REVIEW is not all uppercase");
-    } else if bot_option.len() > BOT_OPTION_MAX_LEN {
-        error = format!("REVIEW Game code exceeds maximum length of {}", BOT_OPTION_MAX_LEN);
-    };
-
-    if !error.is_empty() {
-        Some(error)
-    } else {
-        None
-    }
+pub fn validate_bot_option(_bot_option: &bool) -> Option<bool> {
+    // let mut error = String::from("");
+    //
+    // if bot_option.is_null() {
+    //     error = String::from("REVIEW Bot option is required");
+    // };
+    //
+    // if !error.is_empty() {
+    //     Some(true)
+    // } else {
+    //     None
+    // }
+    None
 }
 
 pub const TEAM_NAME_MAX_LEN: usize = 25;
