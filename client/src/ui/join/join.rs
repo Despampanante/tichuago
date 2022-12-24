@@ -81,7 +81,7 @@ pub fn join() -> Html {
         Callback::from(move |e: InputEvent| {
             let target: Option<EventTarget> = e.target();
             let input = target.and_then(|t| t.dyn_into::<HtmlInputElement>().ok());
-            let msg = input.map(|input| AppReducerAction::SetJoinRoomGameCodeInput(input.value()));
+            let msg = input.map(|input| AppReducerAction::SetBotOptionInput(input.value()));
             reducer_handle.dispatch(msg.unwrap());
         })
     };
